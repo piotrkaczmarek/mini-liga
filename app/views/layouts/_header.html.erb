@@ -1,0 +1,30 @@
+<header class="navbar navbar-fixed-top navbar">
+  <div class="navbar-inner">
+        <%= link_to (t :multileague), root_path, class: "brand", id: "logo" %>
+        <ul class="nav">
+          <li><%= link_to (t :home),    root_path %></li>
+          <li><%= link_to (t :signin), signin_path %></li>
+          <li><%= link_to (t :signup), signup_path %></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li><%= link_to 'PL',    root_path(locale: 'pl') %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to 'EN', root_path(locale: 'en') %></li>
+        </ul>
+      </nav>
+  </div>
+  <div class="navbar-inner navbar-inverse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          <li><%= link_to (t :leagues),    '#' %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to (t :tournaments), '#' %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to (t :global_rating), '#' %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to (t :player), '#' %></li>
+          <li class="divider-vertical"></li>
+        </ul>
+      </nav>
+  </div>
+</header>
