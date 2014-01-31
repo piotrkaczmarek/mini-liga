@@ -1,0 +1,4 @@
+class Referee < User
+
+
+end

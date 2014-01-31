@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130015335) do
+ActiveRecord::Schema.define(version: 20140131174145) do
+
+  create_table "leagues", force: true do |t|
+    t.string   "name"
+    t.integer  "weekday"
+    t.string   "sport"
+    t.integer  "max_number_of_players"
+    t.integer  "club_id"
+    t.integer  "rules_id"
+    t.integer  "keeper_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "prize"
+    t.string   "description"
+  end
 
   create_table "users", force: true do |t|
     t.string   "last_name"
@@ -21,7 +35,8 @@ ActiveRecord::Schema.define(version: 20140130015335) do
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type",            default: "player"
+    t.string   "type",            default: "Player"
+    t.integer  "club_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

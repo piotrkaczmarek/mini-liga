@@ -16,6 +16,19 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def admin?
+    current_user.type == "Admin"
+  end
+
+  def keeper?
+    current_user.type == "Keeper"
+  end
+
+  def keeper_toolbar?
+    ( current_page? leagues_keeper_path(current_user) or
+      current_page? new_league_keeper_path(current_user) ) unless current_user.nil?
+  end
+
   def signed_in_user
     store_location
     redirect_to signin_url, notice: "Please sign in." unless signed_in?

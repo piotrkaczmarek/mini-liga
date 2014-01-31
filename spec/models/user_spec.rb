@@ -15,6 +15,7 @@ describe User do
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }
     it { should respond_to(:type) }
+    it { should respond_to(:full_name) }
 
     describe "not valid when" do
 
@@ -62,10 +63,13 @@ describe User do
         end
       end
     end
-    
-
   end  
 
+  describe "#full_name" do
+    let(:user) { FactoryGirl.create(:user, first_name: "Ian", last_name: "Jennkins") }
+    subject { user }
+    its(:full_name) { should eq "Ian Jennkins" }
+  end
 
 
 end

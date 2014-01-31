@@ -1,0 +1,38 @@
+<div id="fat-menu" class="dropdown">
+  <a href='#' class="dropdown-toggle" data-toggle="dropdown">
+    <%=eval("t :#{user.type.downcase}")%><b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to (t :player), { controller: :users, action: :promote,
+             type: 'Player', id: user.id },
+             data: { confirm: (t :confirm_promote, who: user.full_name, type: (t :player) ) },
+             method: :post %>
+    </li>
+    <li>
+      <%= link_to (t :keeper), { controller: :users, action: :promote,
+             type: 'Keeper', id: user.id },
+             data: { confirm: (t :confirm_promote, who: user.full_name, type: (t :keeper) ) },
+             method: :post %>
+    </li>
+    <li>
+      <%= link_to (t :accountant), { controller: :users, action: :promote,
+             type: 'Accountant', id: user.id },
+             data: { confirm: (t :confirm_promote, who: user.full_name, type: (t :accountant) ) },
+             method: :post %>
+    </li>
+    <li>
+      <%= link_to (t :referee), { controller: :users, action: :promote,
+             type: 'Referee', id: user.id },
+             data: { confirm: (t :confirm_promote, who: user.full_name, type: (t :referee) ) },
+             method: :post %>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to (t :admin), { controller: :users, action: :promote,
+             type: 'Admin', id: user.id },
+             data: { confirm: (t :confirm_promote, who: user.full_name, type: (t :admin) ) },
+             method: :post %>
+    </li>
+  </ul>
+</div>

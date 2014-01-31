@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+gem 'faker', '1.1.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -17,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'jquery-ui-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
@@ -34,15 +39,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'cucumber'
+  gem 'debugger'
   gem 'cucumber-rails', '1.4.0', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
 group :test do
+  gem 'simplecov', require: false
   gem "factory_girl_rails"
   gem "guard-rspec"
 end

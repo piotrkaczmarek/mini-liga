@@ -1,0 +1,4 @@
+class Keeper < User
+
+
+end

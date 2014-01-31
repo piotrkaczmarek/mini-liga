@@ -1,28 +1,13 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
 en:
   home : "Home"
   signin: "Sign in"
-  multileague: "Multi-league"
+  signout: "Sign out"
   signup: "Sign up"
+  multileague: "Multi-league"
+  leagues: "Leagues"
+  tournaments: "Tournaments"
+  global_rating: "Global Rating"
+  player: "Player"
   welcome_header: "Welcome!"
   welcome_message: "Welcome on the home page of MULTI-LEAGUE app"
   first_name: "First name"
@@ -30,4 +15,50 @@ en:
   password: "Password"
   password_confirmation: "Password Confirmation"
   email: "Email"
+  account_type: "Account type"
   welcome_new_user: "Welcome! You have been signed up!"
+  all_leagues: "All leagues"
+  monday: "Monday"
+  tuesday: "Tuesday"
+  wednesday: "Wednesday"
+  thursday: "Thursday"
+  friday: "Friday"
+  saturday: "Saturday"
+  sunday: "Sunday"
+  league_name: "Name"
+  sport: "Sport"
+  weekday: "Weekday"
+  monday: "Monday"
+  tuesday: "Tuesday"
+  wednesday: "Wednesday"
+  thursday: "Thursday"
+  friday: "Friday"
+  saturday: "Saturday"
+  sunday: "Sunday"
+  details: "Details..."
+  about: "About"
+  contact: "Contact"
+  are_you_new: "New user?"
+  my_account: "My account"
+  manage_users: "Manage users"
+  all_users: "All users"
+  admin: "Admin"
+  player: "Player"
+  keeper: "Keeper"
+  referee: "Referee"
+  accountant: "Accountant"
+  change: "change"
+  confirm_promote: "Are you sure you want to promote %{who} to %{type}?"
+  league_details: "League details"
+  prize: "Prize"
+  description: "Description"
+  timetable: "Timetable"
+  table: "Table"
+  my_games: "My games"
+  my_leagues: "My leagues"
+  new_league: "New league"
+  max_number_of_players: "Max number of players"
+  create: "Create"
+  my_tournaments: "My tournaments"
+  add_league: "Add league"
+  add_tournament: "Add tournament"

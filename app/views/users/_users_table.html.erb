@@ -1,0 +1,22 @@
+<table id="users">
+<thead>
+  <tr>
+    <th><%=(t :first_name)%></th>
+    <th><%=(t :last_name)%></th>
+    <th><%=(t :email)%></th>
+    <th><%=(t :account_type)%></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @users.each do |user| %>
+  <tr id=<%="user_#{user.id}"%>>
+    <td><%=user.first_name%></td>
+    <td><%=user.last_name%></td>
+    <td><%=user.email%></td>
+    <td><%= render 'change_type_button', user: user%></td>
+    <td><%=link_to (t :details), user_path(user)%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>

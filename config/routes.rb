@@ -1,21 +1,24 @@
 MiniLiga::Application.routes.draw do
 
+  resources :users do 
+    member do
+      post :promote
+    end
+  end
+  resources :keepers, only: :index do
+    member do
+      get :leagues
+      get :new_league
+    end
+  end
 
-
-
-
-
-
-
-
-
-
-
-  resources :users
+  resources :leagues
+ 
   root 'static_pages#home'
+  resources :sessions, only: [:new, :create, :destroy]
   match '/signup',   to: 'users#new',            via: 'get'
   match '/signin',   to: 'sessions#new',         via: 'get'
-  match '/signout',  to: 'sessions#destroy',     via:'delete'
+  match '/signout',  to: 'sessions#destroy',     via: 'delete'
   match '/about',    to: 'static_pages#about',   via: 'get'
   match '/contact',  to: 'static_pages#contact', via: 'get'
 

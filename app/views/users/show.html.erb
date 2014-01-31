@@ -1,0 +1,19 @@
+<% provide(:title,"#{@user.first_name} #{@user.last_name}") %>
+
+<div class="row">
+  <div class="span12">
+    <div class="span3">
+      <h1><%="#{@user.first_name} #{@user.last_name}"%></h1>
+    </div>
+    <div class="span3">
+      <h5>
+        <% if admin? %>
+          <%= render 'change_type_button', user: @user%>
+        <% else %>
+          <%=eval("t :#{@user.type.downcase}")%>
+        <% end %>
+      </h5>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+class Accountant < User
+
+
+end

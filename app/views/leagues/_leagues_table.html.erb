@@ -1,0 +1,20 @@
+<table id="leagues">
+<thead>
+  <tr>
+    <th><%=(t :league_name)%></th>
+    <th><%=(t :sport)%></th>
+    <th><%=(t :weekday)%></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @leagues.each do |league| %>
+  <tr>
+    <td><%=league.name%></td>
+    <td><%=league.sport%></td>
+    <td><%=eval("t :#{league.weekday_word}")%></td>
+    <td><%=link_to (t :details), league_path(league)%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
