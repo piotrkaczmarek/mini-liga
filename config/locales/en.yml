@@ -68,3 +68,8 @@ en:
   edit: "Edit"
   choose_day: "choose day..."
   name: "Name"
+  reset_password: "Reset your password"
+  change_password: "Change your password"
+  hello: "Hello"
+  to_reset_click: "To reset your password, click the URL below."
+  if_you_ignore: "If you did not request your password to be reset, just ignore this email and your password will continue to stay the same."

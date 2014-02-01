@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MiniLiga::Application.config.secret_key_base = '4f5e66a20c926047f645c5049068dc2d98a863d92d1386cdaaffb45794984848836754aad9d6ebed4e645d5a3212f2241b03e564363f9244efb5062ba5794e4a'
+MiniLiga::Application.config.secret_key_base = ENV['SECRET_TOKEN']

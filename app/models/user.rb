@@ -28,6 +28,14 @@ class User < ActiveRecord::Base
     @dont_validate_password = false
   end
 
+  def send_password_reset
+    self[:password_reset_token] = User.new_remember_token
+    self.password_reset_sent_at = Time.zone.now
+    disable_password_validation
+    self.save!
+    UserMailer.password_reset(self).deliver
+  end
+
   private
 
     def create_remember_token

@@ -68,6 +68,11 @@ pl:
   name: "Nazwa"
   club: "Ośrodek"
   edit: "Edytuj"
+  reset_password: "Zresetuj swoje hasło"
+  change_password: "Zmień swoje hasło"
+  hello: "Witaj"
+  to_reset_click: "By zresetować swoje hasło kliknij w poniższy link:"
+  if_you_ignore: "Jeśli to nie ty próbujesz zmienić swoje hasło, zignoruj ten email i twoje hasło się nie zmieni."
 
 
   

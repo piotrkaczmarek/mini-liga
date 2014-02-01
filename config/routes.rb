@@ -1,5 +1,6 @@
 MiniLiga::Application.routes.draw do
 
+  get "password_resets/new"
   resources :users do 
     member do
       post :promote
@@ -13,7 +14,8 @@ MiniLiga::Application.routes.draw do
   end
 
   resources :leagues
- 
+  resources :password_resets
+
   root 'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup',   to: 'users#new',            via: 'get'
