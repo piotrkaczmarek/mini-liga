@@ -21,7 +21,10 @@
     <td><%=league.sport%></td>
     <td><%=eval("t :#{league.weekday_word}")%></td>
     <td><%=link_to (t :details), league_path(league)%></td>
+  <% if keeper? %>
     <td><%=(link_to (t :edit), edit_league_path(league) ) if keeper_of? league %></td>
+  <% end %>
+
   </tr>
 <% end %>
 </tbody>
