@@ -6,7 +6,7 @@ FactoryGirl.define do
     password "foobar"
     password_confirmation "foobar"
   end
-
+ 
   factory :league do
     sequence(:name) { |n| "League_#{n}" }
     sport "tenis"

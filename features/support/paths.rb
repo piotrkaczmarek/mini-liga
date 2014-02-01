@@ -21,6 +21,8 @@ module NavigationHelpers
       "http://#{$1}"
     when /^my keeper's leagues page$/
       leagues_keeper_path(@user)
+    when /^the (.+)'s league edit page$/
+      edit_league_path(League.find_by_name($1))
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

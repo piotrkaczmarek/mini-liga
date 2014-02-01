@@ -11,7 +11,7 @@ Scenario: successful sign up
   | user_email                 | j@s.c    |
   | user_password              | password |
   | user_password_confirmation | password |
-  And I press "Create my account"
+  And I press "Create"
   Then there should exist user with email j@s.c
   And I should see "Sign out"
   And I should not see "Sign up"

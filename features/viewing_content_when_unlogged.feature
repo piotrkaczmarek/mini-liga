@@ -4,6 +4,8 @@ Feature: viewing content when unlogged
   I want to be able to navigate through the site
 
 Background: leagues in database
+  Given there is club named Fit Plant in Warsaw city
+  Given there is a keeper named Bob Johnson
   Given the following leagues exist:
   | name  | sport  | weekday |
   | L1    | tenis  | 1       |

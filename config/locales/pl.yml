@@ -62,6 +62,9 @@ pl:
   my_tournaments: "Moje turnieje"
   add_league: "Dodaj ligę"
   add_tournament: "Dodaj turniej"
+  city: "Miasto"
+  club: "Ośrodek"
+  edit: "Edytuj"
 
 
   

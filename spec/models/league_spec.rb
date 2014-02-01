@@ -3,7 +3,8 @@ require 'spec_helper'
 describe League do
   
   describe "validation" do
-    let(:league) { League.new(name: "LeaG", weekday: 3, sport: "tenis") }
+    let(:keeper) { FactoryGirl.create(:user, type: "Keeper") } 
+    let(:league) { League.new(name: "LeaG", weekday: 3, sport: "tenis", club_id: 0, keeper_id: keeper.id) }
    
     subject { league } 
     
@@ -12,6 +13,11 @@ describe League do
     it { should respond_to(:sport) }
     it { should respond_to(:weekday) }
     it { should respond_to(:weekday_word) }
+    it { should respond_to(:prize) }
+    it { should respond_to(:description) }
+    it { should respond_to(:club_id) }
+    it { should respond_to(:keeper_id) }
+    it { should respond_to(:club) }
  
     describe "when name not present" do
       before { league.name = "" }
@@ -32,6 +38,16 @@ describe League do
         before { league.weekday = 7 }
         it { should_not be_valid }
       end
+    end
+    
+    describe "when club id is not present" do
+      before { league.club_id = nil }
+      it { should_not be_valid }
+    end
+
+    describe "when keeper id is not present" do
+      before { league.keeper_id = nil }
+      it { should_not be_valid }
     end
 
   end

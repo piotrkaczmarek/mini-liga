@@ -17,16 +17,20 @@ module SessionsHelper
   end
 
   def admin?
-    current_user.type == "Admin"
+    current_user.type == "Admin" if signed_in?
   end
 
   def keeper?
-    current_user.type == "Keeper"
+    current_user.type == "Keeper" if signed_in?
+  end
+
+  def keeper_of? league
+    league.keeper_id == current_user.id if signed_in?
   end
 
   def keeper_toolbar?
     ( current_page? leagues_keeper_path(current_user) or
-      current_page? new_league_keeper_path(current_user) ) unless current_user.nil?
+      current_page? new_league_keeper_path(current_user) ) if signed_in?
   end
 
   def signed_in_user

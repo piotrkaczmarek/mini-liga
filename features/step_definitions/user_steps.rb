@@ -1,5 +1,6 @@
 Given /the following users exist/ do |users_table|
   users_table.hashes.each do |user|
+    user[:club_id] ||= 0
     user[:password] = "password"
     user[:password_confirmation] = user[:password]
     User.create!(user)
@@ -19,3 +20,6 @@ Given(/^user (\w+) (\w+) should be (\w+)$/) do |first_name, last_name, type |
   expect(user.type).to eq type.capitalize
 end
 
+Given /^there is a keeper named (\w+) (\w+)$/ do |first_name,last_name|
+  FactoryGirl.create(:user, first_name: first_name, last_name: last_name, type: "Keeper")
+end

@@ -8,4 +8,8 @@ class LeaguesController < ApplicationController
     @league  = League.find(params[:id])
   end
 
+  def edit
+    @league = League.find(params[:id])
+  end
+
 end

@@ -4,6 +4,7 @@ Feature: managing leagues
   I want to create new leagues
 
 Background: keeper is in database and is logged in
+  Given there is club named Fit Plant in Warsaw city
   Given the following users exist:
   | id | first_name | last_name | email | type   |
   | 0  | John       | Smith     | j@s.c | Keeper |
@@ -18,11 +19,14 @@ Scenario: viewing my leagues
   Then I should be on my keeper's leagues page
   And I should see "My leagues"
   And I should see "lig"
-  And I follow "Details"
+  And I follow "Edit"
   Then I should be on the lig's league edit page
 
 Scenario: creating new league
   Given I am on my keeper's leagues page
-  And I follow "Add League"
+  And I follow "Add league"
+  And I fill in the following:
+  | pending_email      | j@s.c    |
+  | session_password   | password |
   
 

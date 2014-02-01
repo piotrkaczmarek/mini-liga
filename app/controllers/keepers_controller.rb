@@ -8,6 +8,7 @@ class KeepersController < ApplicationController
   def new_league
     keeper = Keeper.find(params[:id])
     @league = League.new(keeper_id: keeper.id, club_id: keeper.club_id)
+    render 'leagues/new'
   end
 
 end

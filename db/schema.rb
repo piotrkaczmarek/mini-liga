@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140131174145) do
+ActiveRecord::Schema.define(version: 20140201010149) do
+
+  create_table "cities", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "clubs", force: true do |t|
+    t.integer "city_id"
+    t.string  "name"
+  end
 
   create_table "leagues", force: true do |t|
     t.string   "name"
-    t.integer  "weekday"
+    t.integer  "weekday",               limit: 255
     t.string   "sport"
-    t.integer  "max_number_of_players"
     t.integer  "club_id"
     t.integer  "rules_id"
     t.integer  "keeper_id"
@@ -25,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140131174145) do
     t.datetime "updated_at"
     t.string   "prize"
     t.string   "description"
+    t.integer  "max_number_of_players",             default: 50
   end
 
   create_table "users", force: true do |t|

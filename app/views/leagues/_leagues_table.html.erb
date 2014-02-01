@@ -2,18 +2,26 @@
 <thead>
   <tr>
     <th><%=(t :league_name)%></th>
+    <th><%=(t :city)%></th>
+    <th><%=(t :club)%></th>
     <th><%=(t :sport)%></th>
     <th><%=(t :weekday)%></th>
     <th></th>
+  <% if keeper? %>
+    <th></th>
+  <% end %>
   </tr>
 </thead>
 <tbody>
 <% @leagues.each do |league| %>
   <tr>
     <td><%=league.name%></td>
+    <td><%=league.city.name%></td>
+    <td><%=league.club.name%></td>
     <td><%=league.sport%></td>
     <td><%=eval("t :#{league.weekday_word}")%></td>
     <td><%=link_to (t :details), league_path(league)%></td>
+    <td><%=(link_to (t :edit), edit_league_path(league) ) if keeper_of? league %></td>
   </tr>
 <% end %>
 </tbody>
