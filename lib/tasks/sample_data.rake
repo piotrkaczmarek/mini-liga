@@ -14,6 +14,7 @@ namespace :db do
                  last_name: "Smith",
                  email: "admin@ml.com",
                  password: "password",
+                 phone_number: 700700700,
                  password_confirmation: "password",
                  type: "Admin")
     60.times do |n|
@@ -22,6 +23,7 @@ namespace :db do
       User.create!(first_name: Faker::Name.first_name,
                    last_name: Faker::Name.last_name,
                    email: email,
+                   phone_number: 700700700,
                    password: password,
                    password_confirmation: password)
     end
@@ -49,6 +51,7 @@ namespace :db do
                             email: "keeper#{n}@ml.com",
                             password: "password",
                             password_confirmation: "password",
+                            phone_number: 700700700,
                             type: "Keeper",
                             club_id: Club.pluck(:id).sample)
     end

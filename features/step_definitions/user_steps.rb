@@ -2,6 +2,7 @@ Given /the following users exist/ do |users_table|
   users_table.hashes.each do |user|
     
     user[:password] = "password"
+    user[:phone_number] ||= 700700700
     user[:password_confirmation] = user[:password]
     if user[:type] == "Keeper"
       user[:club_id] ||= Club.first.id

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Admin do
+describe Keeper do
 
   describe "validation" do
-      let(:keeper) { Keeper.new(first_name: "adam", last_name: "Smith", email: "eee@aaa.ccc",
+      let(:keeper) { Keeper.new(first_name: "adam", last_name: "Smith", email: "eee@aaa.ccc", phone_number: 700700700,
                           password: "foobar", password_confirmation: "foobar", club_id: 0) }
     subject { keeper } 
     it { should be_valid }

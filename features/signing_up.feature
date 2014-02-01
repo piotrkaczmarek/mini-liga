@@ -6,11 +6,12 @@ Feature: signing up
 Scenario: successful sign up
   Given I am on the signup page
   And I fill in the following:
-  | user_first_name            | John     |
-  | user_last_name             | Smith    |
-  | user_email                 | j@s.c    |
-  | user_password              | password |
-  | user_password_confirmation | password |
+  | user_first_name            | John      |
+  | user_last_name             | Smith     |
+  | user_email                 | j@s.c     |
+  | user_password              | password  |
+  | user_password_confirmation | password  |
+  | user_phone_number          | 700700700 |
   And I press "Create"
   Then there should exist user with email j@s.c
   And I should see "Sign out"

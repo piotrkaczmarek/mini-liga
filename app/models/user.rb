@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, if: :validate_password?
   before_save { self.email = email.downcase }
+  validates :phone_number, length: { minimum: 7, maximum: 11 }
   has_secure_password
 
   def User.new_remember_token

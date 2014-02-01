@@ -78,3 +78,5 @@ en:
   password_expired: "Password reset has expired."
   password_reseted: "Password has been reseted!"
   wrong_password: "Invalid email/password combination"
+  phone_number: "Phone number"
+  mandatory_field: "* mandatory field"

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Admin do
 
   describe "validation" do
-      let(:admin) { Admin.new(first_name: "adam", last_name: "Smith", email: "eee@aaa.ccc",
+      let(:admin) { Admin.new(first_name: "adam", last_name: "Smith", email: "eee@aaa.ccc", phone_number: 700700700,
                           password: "foobar", password_confirmation: "foobar") }
     subject { admin } 
     it { should be_valid }

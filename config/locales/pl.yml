@@ -78,6 +78,8 @@ pl:
   password_expired: "Resetowanie hasła wygasło"
   password_reseted: "Hasło zostało zresetowane"
   wrong_password: "Nieprawdłowa kombinacja email/hasło"
+  phone_number: "Numer telefonu"
+  mandatory_field: "* pole_obowiązkowe"
 
 
   

@@ -5,6 +5,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "john_#{n}@example.com" }
     password "foobar"
     password_confirmation "foobar"
+    phone_number 700700700
   end
  
   factory :league do

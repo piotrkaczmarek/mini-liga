@@ -16,6 +16,7 @@ describe User do
     it { should respond_to(:password_confirmation) }
     it { should respond_to(:type) }
     it { should respond_to(:full_name) }
+    it { should respond_to(:phone_number) }
 
     describe "not valid when" do
 
@@ -44,8 +45,25 @@ describe User do
           it { should_not be_valid }
         end
       end
+   
+      describe "phone number is not correct" do
+        describe "because it is not present" do
+          before { user.phone_number = nil }
+          it { should_not be_valid }
+        end
+   
+        describe "because it is too short" do
+          before { user.phone_number = 12345 }
+          it { should_not be_valid }
+        end
 
-      describe "when password is not present" do
+        describe "because it is too long" do
+          before { user.phone_number = 487007007009 }
+          it { should_not be_valid }
+        end
+      end
+
+      describe "password is not present" do
         before do
           @user = User.new(first_name: user.first_name, last_name: user.last_name, email: user.email, password: "")
         end
