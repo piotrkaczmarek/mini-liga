@@ -77,3 +77,4 @@ en:
   no_such_email: "No such email registered"
   password_expired: "Password reset has expired."
   password_reseted: "Password has been reseted!"
+  wrong_password: "Invalid email/password combination"
