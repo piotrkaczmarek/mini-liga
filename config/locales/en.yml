@@ -57,6 +57,7 @@ en:
   my_games: "My games"
   my_leagues: "My leagues"
   new_league: "New league"
+  edit_league: "Edit league"
   max_number_of_players: "Max number of players"
   create: "Create"
   my_tournaments: "My tournaments"
@@ -65,3 +66,5 @@ en:
   city: "City"
   club: "Club"
   edit: "Edit"
+  choose_day: "choose day..."
+  name: "Name"

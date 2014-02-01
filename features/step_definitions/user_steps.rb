@@ -1,8 +1,11 @@
 Given /the following users exist/ do |users_table|
   users_table.hashes.each do |user|
-    user[:club_id] ||= 0
+    
     user[:password] = "password"
     user[:password_confirmation] = user[:password]
+    if user[:type] == "Keeper"
+      user[:club_id] ||= Club.first.id
+    end
     User.create!(user)
   end
 end

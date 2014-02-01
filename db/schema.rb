@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140201010149) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cities", force: true do |t|
     t.string "name"
   end
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140201010149) do
 
   create_table "leagues", force: true do |t|
     t.string   "name"
-    t.integer  "weekday",               limit: 255
+    t.integer  "weekday"
     t.string   "sport"
     t.integer  "club_id"
     t.integer  "rules_id"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140201010149) do
     t.datetime "updated_at"
     t.string   "prize"
     t.string   "description"
-    t.integer  "max_number_of_players",             default: 50
+    t.integer  "max_number_of_players", default: 50
   end
 
   create_table "users", force: true do |t|
@@ -48,6 +51,6 @@ ActiveRecord::Schema.define(version: 20140201010149) do
     t.integer  "club_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

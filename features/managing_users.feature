@@ -5,9 +5,9 @@ Feature: managing users
 
 Background: users in database 
   Given the following users exist:
-  | first_name | last_name | email | type   |
-  | John       | Smith     | j@s.c | Admin  |
-  | Paul       | Smith     | p@s.c | Player |
+  | first_name | last_name | email | type   | id |
+  | John       | Smith     | j@s.c | Admin  | 1  |
+  | Paul       | Smith     | p@s.c | Player | 2  |
   Given I am logged in as John Smith
 
 Scenario: viewing users
