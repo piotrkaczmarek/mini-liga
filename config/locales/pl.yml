@@ -73,6 +73,10 @@ pl:
   hello: "Witaj"
   to_reset_click: "By zresetować swoje hasło kliknij w poniższy link:"
   if_you_ignore: "Jeśli to nie ty próbujesz zmienić swoje hasło, zignoruj ten email i twoje hasło się nie zmieni."
+  password_reset_sent: "Email z instrukcją jak zresetować hasło został wysłany na podany adres"
+  no_such_email: "Nie ma konta zarejestrowanego na ten adres email"
+  password_expired: "Resetowanie hasła wygasło"
+  password_reseted: "Hasło zostało zresetowane"
 
 
   

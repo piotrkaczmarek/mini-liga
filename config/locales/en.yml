@@ -73,3 +73,7 @@ en:
   hello: "Hello"
   to_reset_click: "To reset your password, click the URL below."
   if_you_ignore: "If you did not request your password to be reset, just ignore this email and your password will continue to stay the same."
+  password_reset_sent: "Email with password reset instructions sent"
+  no_such_email: "No such email registered"
+  password_expired: "Password reset has expired."
+  password_reseted: "Password has been reseted!"
