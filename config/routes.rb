@@ -4,6 +4,7 @@ MiniLiga::Application.routes.draw do
   resources :users do 
     member do
       post :promote
+      post :change_password
     end
   end
   resources :keepers, only: :index do

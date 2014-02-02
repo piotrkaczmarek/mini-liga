@@ -12,19 +12,43 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
 
     if @user.save
       flash[:success] = (t :welcome_new_user)
       sign_in @user
-      redirect_to root_url
+      redirect_to root_path
     else
       render 'new'
     end
-
   end
 
+  def update
+    if @user = User.find(params[:id])
+      @user.disable_password_validation
+      if @user.update_attributes(user_params)
+        flash[:notice] = (t :profile_updated)
+        redirect_to user_path(@user)
+      else
+        render 'edit'
+      end
+    else
+      redirect_to users_path
+    end
+  end
+
+  def change_password
+    if user = User.find(params[:id])
+      user.reset_password
+      redirect_to edit_password_reset_path(id: user.password_reset_token)
+    end
+  end
+  
   def promote
     @user = User.find(params[:id])
     if valid_types.include?(user_type)

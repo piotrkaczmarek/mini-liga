@@ -20,7 +20,7 @@ class PasswordResetsController < ApplicationController
       if @user.password_reset_sent_at < 2.hours.ago
         flash[:error] = (t :password_expired)
         redirect_to new_password_reset_path
-      elsif @user.update_attributes(user_params["#{@user.class.name.downcase}"])
+      elsif @user.update_attributes(user_params)
         flash[:notice] = (t :password_reseted)
         redirect_to root_url
       else
@@ -34,12 +34,7 @@ class PasswordResetsController < ApplicationController
   private
 
     def user_params
-      params.permit( player: [:password, :password_confirmation],
-                     user: [:password, :password_confirmation],
-                     admin:  [:password, :password_confirmation],
-                     keeper:  [:password, :password_confirmation],
-                     accountant:  [:password, :password_confirmation],
-                     referee: [:password, :password_confirmation])
+      params.require(:user).permit(:password, :password_confirmation)
     end
 
 end

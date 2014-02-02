@@ -41,7 +41,7 @@ describe PasswordResetsController do
                           password_reset_sent_at: 1.hour.ago) }
         before do
           @old_digest = user.password_digest.to_s
-          patch :update, { id: "xxx", player: { password: "barbar",
+          patch :update, { id: "xxx", user: { password: "barbar",
                         password_confirmation: "barbar" } }
         end 
         it "should change user's password" do
@@ -58,7 +58,7 @@ describe PasswordResetsController do
                           password_reset_sent_at: 3.hours.ago) }
         before do
           @old_digest = user.password_digest.to_s
-          patch :update, { id: "xxx", player: { password: "barbar",
+          patch :update, { id: "xxx", user: { password: "barbar",
                         password_confirmation: "barbar" } }
         end 
         it "should not change user's password" do

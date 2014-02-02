@@ -27,3 +27,12 @@ end
 Given /^there is a keeper named (\w+) (\w+)$/ do |first_name,last_name|
   FactoryGirl.create(:user, first_name: first_name, last_name: last_name, type: "Keeper")
 end
+
+Then(/^user (\w+) (\w+) should not exist$/) do |first_name,last_name|
+  expect(User.where(first_name: first_name, last_name: last_name).first).to be_nil
+end
+
+Then(/^I should be signed in as (\w+) (\w+)$/) do |first_name,last_name|
+  expect(current_user).to eq User.where(first_name: first_name, last_name: last_name).first
+end
+

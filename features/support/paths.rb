@@ -23,6 +23,12 @@ module NavigationHelpers
       leagues_keeper_path(@user)
     when /^the (.+)'s league edit page$/
       edit_league_path(League.find_by_name($1))
+    when /^the (\w+) (\w+)'s user edit page$/
+      edit_user_path(User.where(first_name: $1, last_name: $2).first)
+    when /^the (\w+) (\w+)'s user page$/
+      user_path(User.where(first_name: $1, last_name: $2).first)
+    when /^the reset password page$/
+      edit_password_reset_path(id: @user.reload.password_reset_token)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

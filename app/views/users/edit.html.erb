@@ -1,0 +1,27 @@
+<% provide(:title,"#{@user.first_name} #{@user.last_name} | #{t :edit_profile}") %>
+
+<div class="hero-unit">
+  <h4><%= t :edit_profile %></h4>
+  <div class="row">
+    <div class="span6 offset3">
+      <%= form_for(@user, url: user_path(@user.id),as: :user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.label "#{(t :first_name)}*" %>
+        <%= f.text_field :first_name %>
+
+        <%= f.label "#{(t :last_name)}*" %>
+        <%= f.text_field :last_name %>
+
+        <%= f.label "#{(t :email)}*" %>
+        <%= f.text_field :email %>
+
+        <%= f.label "#{(t :phone_number)}*" %>
+        <%= f.number_field :phone_number %>
+
+        <%= f.submit (t :edit_profile), class: "btn btn-large btn-primary" %>
+      <% end %>
+      <small><%= t :mandatory_field %></small>
+    </div>
+  </div>
+</div>
+

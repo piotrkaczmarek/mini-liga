@@ -47,7 +47,7 @@ pl:
   keeper: "Opiekun"
   referee: "Sędzia"
   accountant: "Księgowy"
-  change: "zmień"
+  change: "Zmień"
   confirm_promote: "Czy jesteś pewien, że chcesz by %{who} funkcjonował jako %{type}?"
   league_details: "Szczegóły ligi"
   prize: "Nagroda"
@@ -69,7 +69,7 @@ pl:
   club: "Ośrodek"
   edit: "Edytuj"
   reset_password: "Zresetuj swoje hasło"
-  change_password: "Zmień swoje hasło"
+  change_password: "Zmień hasło"
   hello: "Witaj"
   to_reset_click: "By zresetować swoje hasło kliknij w poniższy link:"
   if_you_ignore: "Jeśli to nie ty próbujesz zmienić swoje hasło, zignoruj ten email i twoje hasło się nie zmieni."
@@ -80,6 +80,9 @@ pl:
   wrong_password: "Nieprawdłowa kombinacja email/hasło"
   phone_number: "Numer telefonu"
   mandatory_field: "* pole_obowiązkowe"
+  edit_profile: "Edytuj profil"
+  profile_updated: "Profil zaktualizowany!"
+  forgot_password?: "Zapomniałeś swoje hasło?"
 
 
   
