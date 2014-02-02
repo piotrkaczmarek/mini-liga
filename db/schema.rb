@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202134255) do
+ActiveRecord::Schema.define(version: 20140202153640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20140202134255) do
   create_table "clubs", force: true do |t|
     t.integer "city_id"
     t.string  "name"
+  end
+
+  create_table "game_classes", force: true do |t|
+    t.boolean  "active"
+    t.integer  "season_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "leagues", force: true do |t|
@@ -43,6 +51,21 @@ ActiveRecord::Schema.define(version: 20140202134255) do
     t.integer  "for_match_score_required_small_points_spread"
     t.integer  "for_match_score_big_points_upper_limit"
     t.integer  "for_match_score_small_points_upper_limit"
+  end
+
+  create_table "meetings", force: true do |t|
+    t.datetime "date"
+    t.integer  "game_class_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "seasons", force: true do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.integer  "league_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

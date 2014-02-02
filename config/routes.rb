@@ -13,6 +13,7 @@ MiniLiga::Application.routes.draw do
       get :new_league
     end
   end
+  resources :meetings
 
   resources :leagues
   resources :password_resets

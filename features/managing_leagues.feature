@@ -46,8 +46,13 @@ Scenario: submiting invalid information when creating new league
 
 Scenario: editing league
   Given the following leagues exist:
-  | name  | sport  | weekday | keeper_id |
-  | lig   | chess  | 2       | 0         |
+  | id | name  | sport  | weekday | keeper_id |
+  | 0  | lig   | chess  | 2       | 0         |
   Given I am on the lig's league edit page
+  Then I should see "Season 1"
+  And I fill in the following:
+  | meeting_date | 5.5.2014 |
+  And I press "Add"
+  Then I should see "5.5.2014"
 
 

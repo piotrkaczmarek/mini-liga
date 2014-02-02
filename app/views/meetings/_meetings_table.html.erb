@@ -1,0 +1,21 @@
+<table id="meetings">
+<thead>
+  <tr>
+    <th><%=(t :date)%></th>
+    <th></th>
+  <% if keeper_of? @league %>
+    <th><%=(t :edition)%></th>
+  <% end %>
+  </tr>
+</thead>
+<tbody>
+<% meetings.each do |meeting| %>
+  <tr>
+    <td><%="#{meeting.date.day}.#{meeting.date.month}.#{meeting.date.year}"%></td>
+  <% if keeper_of? @league %>
+    <td><%=link_to (t :edit),'#' %><%#edit_meeting_path(meeting)%></td>
+  <% end %>
+  </tr>
+<% end %>
+</tbody>
+</table>

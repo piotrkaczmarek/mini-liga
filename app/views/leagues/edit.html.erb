@@ -1,14 +1,25 @@
 <% provide(:title, (t :edit_league)) %>
 
 <div class="hero-unit">
+  <h3><%= @league.name %></h3>
   <h4><%= t :edit_league %></h4>
-  <div class="row">
-    <div class="span6 offset3">
-      <%= form_for(@league) do |f| %>
-        <%= render "leagues/form_body", f: f %>
-        <%= f.submit (t :edit), class: "btn btn-large btn-primary" %>
+  <h6><%= @season.name %></h6>
+
+  <div class="row-fluid">
+    <div class="span4">
+      <%= render 'meetings/meetings_table', meetings: @meetings %>
+    </div>
+    <div class="span4">
+      <%= form_for @new_meeting do |f| %>
+        <%= f.date_field :date %>
+        <%= f.hidden_field :game_class_id %>
+        <%= f.submit (t :add_meeting), class: "btn btn-large btn-primary" %>
       <% end %>
     </div>
   </div>
+
+
+
+  
 </div>
 

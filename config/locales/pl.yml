@@ -87,6 +87,9 @@ pl:
   big_points: "Duże punkty"
   upper_limit: "Górny limit"
   required_spread: "Wymagana przewaga"
+  add_meeting: "Dodaj termin"
+  date: "Data"
+  edition: "Edycja"
 
 
   

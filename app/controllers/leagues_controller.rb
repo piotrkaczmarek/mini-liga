@@ -10,6 +10,9 @@ class LeaguesController < ApplicationController
 
   def edit
     @league = League.find(params[:id])
+    @season = @league.seasons.last
+    @meetings = @league.meetings.order(:date)
+    @new_meeting = @season.game_classes.first.meetings.new
   end
 
   def create

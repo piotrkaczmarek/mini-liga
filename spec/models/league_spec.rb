@@ -18,6 +18,9 @@ describe League do
     it { should respond_to(:club_id) }
     it { should respond_to(:keeper_id) }
     it { should respond_to(:club) }
+    it { should respond_to(:seasons) }
+    it { should respond_to(:game_classes) }
+    it { should respond_to(:meetings) }
  
     describe "when name not present" do
       before { league.name = "" }
