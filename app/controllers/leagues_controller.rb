@@ -6,12 +6,14 @@ class LeaguesController < ApplicationController
 
   def show
     @league  = League.find(params[:id])
+    @new_meetings = @league.meetings.where("date >= :now", {now: Time.now}).order(date: :desc)
+    @old_meetings = @league.meetings.where("date <= :now", {now: Time.now}).order(date: :desc)
   end
 
   def edit
     @league = League.find(params[:id])
     @season = @league.seasons.last
-    @meetings = @league.meetings.order(:date)
+    @meetings = @league.meetings.order(date: :desc)
     @new_meeting = @season.game_classes.first.meetings.new
   end
 

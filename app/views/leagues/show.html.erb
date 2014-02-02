@@ -1,8 +1,8 @@
 <% provide(:title,@league.name) %>
-<h3><%=@league.name%></h3>
+<h2><%=@league.name%></h2>
 <div class="row-fluid">
 
-      <h4><%=(t :league_details)%></h4>
+      <h3><%=(t :league_details)%></h3>
       <div class="row-fluid">
         <div class="span2">
           <b><%=(t :prize)%></b>
@@ -24,10 +24,14 @@
       <div class="row-fluid">
         <div class="span11">
           <div class="span4">
-            <h5><%=(t :timetable)%></h5>
+            <h3><%=(t :timetable)%></h3>
+            <h4><%=(t :history)%></h4>
+            <%= render 'meetings/meetings_table', meetings: @old_meetings %>
+            <h4><%=(t :new_ones)%></h4>
+            <%= render 'meetings/meetings_table', meetings: @new_meetings %>
           </div>
           <div class="span4">
-            <h5><%=(t :table)%></h5>
+            <h3><%=(t :table)%></h3>
           </div>
         </div>
       </div>

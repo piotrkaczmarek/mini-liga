@@ -66,13 +66,25 @@ namespace :db do
       prize = ['carrot', '$$$', '1mln euro','cup','medal'].sample
       description = Faker::Lorem.sentences(3).join
       weekday = Random.rand(0..6)
-      League.create!(name: name,
+      league = League.create!(name: name,
                      sport: sport,
                      weekday: weekday,
                      prize: prize,
                      description: description,
                      club_id: Club.pluck(:id).sample,
                      keeper_id: Keeper.pluck(:id).sample)
+       make_meetings_in league
+    end
+  end
+
+  def make_meetings_in league
+    2.times do |n|
+      date = Time.now - (n+1).years
+      league.seasons.first.game_classes.first.meetings.create(date: date)
+    end
+    3.times do |n|
+      date = Time.now + (n+1).years
+      league.seasons.first.game_classes.first.meetings.create(date: date)
     end
   end
 
