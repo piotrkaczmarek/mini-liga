@@ -83,4 +83,8 @@ en:
   mandatory_field: "* mandatory field"
   edit_profile: "Edit profile"
   profile_updated: "Profile updated successfully!"
+  small_points: "Small points"
+  big_points: "Big points"
+  upper_limit: "Upper limit"
+  required_spread: "Required spread"
 

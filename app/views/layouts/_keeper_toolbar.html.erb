@@ -5,7 +5,7 @@
           <li class="divider-vertical"></li>
           <li><%= link_to (t :my_tournaments), '#' %></li>
           <li class="divider-vertical"></li>
-          <li><%= link_to (t :add_league), new_league_keeper_path %></li>
+          <li><%= link_to (t :add_league), new_league_keeper_path(current_user) %></li>
           <li class="divider-vertical"></li>
           <li><%= link_to (t :add_tournament), '#' %></li>
           <li class="divider-vertical"></li>

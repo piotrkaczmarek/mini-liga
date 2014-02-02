@@ -1,0 +1,52 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="row">
+      <div class="span5">
+        <%= f.label (:big_points) %>
+      </div>
+      <div class="span5">
+        <%= f.check_box :for_match_score_use_big_points %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <%= f.label (:upper_limit) %>
+      </div>
+      <div class="span5">
+        <%= f.number_field :for_match_score_big_points_upper_limit %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <%= f.label (:required_spread) %>
+      </div>
+      <div class="span5">
+        <%= f.number_field :for_match_score_required_big_points_spread %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <%= f.label (:small_points) %>
+      </div>
+      <div class="span5">
+        <%= f.check_box :for_match_score_use_small_points %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <%= f.label (:upper_limit) %>
+      </div>
+      <div class="span5">
+        <%= f.number_field :for_match_score_small_points_upper_limit %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <%= f.label (:required_spread) %>
+      </div>
+      <div class="span5">
+        <%= f.number_field :for_match_score_required_small_points_spread %>
+      </div>
+    </div>
+  </div>
+</div>

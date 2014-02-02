@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201191055) do
+ActiveRecord::Schema.define(version: 20140202134255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,13 @@ ActiveRecord::Schema.define(version: 20140201191055) do
     t.datetime "updated_at"
     t.string   "prize"
     t.string   "description"
-    t.integer  "max_number_of_players", default: 50
+    t.integer  "max_number_of_players",                        default: 50
+    t.boolean  "for_match_score_use_big_points"
+    t.boolean  "for_match_score_use_small_points"
+    t.integer  "for_match_score_required_big_points_spread"
+    t.integer  "for_match_score_required_small_points_spread"
+    t.integer  "for_match_score_big_points_upper_limit"
+    t.integer  "for_match_score_small_points_upper_limit"
   end
 
   create_table "users", force: true do |t|

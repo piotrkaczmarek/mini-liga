@@ -2,5 +2,13 @@
 
 <div class="hero-unit">
   <h4><%= t :edit_league %></h4>
+  <div class="row">
+    <div class="span6 offset3">
+      <%= form_for(@league) do |f| %>
+        <%= render "leagues/form_body", f: f %>
+        <%= f.submit (t :edit), class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 

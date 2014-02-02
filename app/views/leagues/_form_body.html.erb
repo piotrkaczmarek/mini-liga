@@ -1,0 +1,30 @@
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="row-fluid">
+          <div class="span8">
+
+            <%= f.label (t :name) %>
+            <%= f.text_field :name %>
+
+            <%= f.label (t :sport) %>
+            <%= f.text_field :sport %>
+
+            <%= f.label (t :weekday) %>
+            <%= f.collection_select(:weekday,
+                  (0..6).to_a, :to_i, :to_weekday,
+                   prompt: (t :choose_day)) %>
+
+            <%= f.label (t :max_number_of_players) %>
+            <%= f.number_field :max_number_of_players, in: 1..100 %>
+          </div>
+          <div class="span4">
+            <%= f.label (t :prize) %>
+            <%= f.text_area :prize %>
+
+            <%= f.label (t :description) %>
+            <%= f.text_area :description %>
+
+            <%= f.hidden_field :club_id %>
+            <%= f.hidden_field :keeper_id %>
+          </div>
+        </div>
+        <%= render 'leagues/match_score_rules', f: f %>

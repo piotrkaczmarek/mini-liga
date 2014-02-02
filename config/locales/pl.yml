@@ -83,6 +83,10 @@ pl:
   edit_profile: "Edytuj profil"
   profile_updated: "Profil zaktualizowany!"
   forgot_password?: "Zapomniałeś swoje hasło?"
+  small_points: "Małe punkty"
+  big_points: "Duże punkty"
+  upper_limit: "Górny limit"
+  required_spread: "Wymagana przewaga"
 
 
   
