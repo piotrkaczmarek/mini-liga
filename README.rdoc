@@ -1,28 +1,20 @@
-== README
+== MULTI - LEAGUE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This a demo app developed as a University project (graded 4.5/5.0)
+App is not fully implemented.
 
-Things you may want to cover:
+Implemented features:
 
-* Ruby version
+* multiple account types
 
-* System dependencies
+* l18n - English and Polish versions
 
-* Configuration
+* Account creating and management
 
-* Database creation
+* Password reseting with mailer
 
-* Database initialization
+* Creating and managing leagues and meetings with league keeper account
 
-* How to run the test suite
+* Sample data filled with rake task
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Deployed on Heroku http://multi-league.herokuapp.com (on free tier so send me a message if you want me to wake it up)
